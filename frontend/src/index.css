@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  /* Redefining existing color mappings to a warm, earthy Claude-inspired dark palette */
+  --color-navy-950: #141413; /* Claude warm deep charcoal background */
+  --color-navy-900: #1c1c1b; /* Claude warm charcoal card surface */
+  --color-navy-800: #292927; /* Claude soft earthy border */
+  --color-navy-700: #3b3b38; /* Slightly lighter earthy border/element */
+  --color-navy-600: #6b6a65; /* Sophisticated warm grey secondary text */
+  
+  /* Primary Accent: Claude's trademark warm clay/terracotta instead of flashy blue */
+  --color-blue-600: #d97736; /* Claude earthy orange/clay primary */
+  --color-blue-500: #e5935c; /* Lighter clay hover */
+  --color-blue-400: #f0b085; /* Active/selected highlight */
+  --color-blue-800: #9e4f20; /* Disabled/deep terracotta */
+  
+  /* Earthy severity accents */
+  --color-high: #cc4d4d; /* Muted warm terracotta red */
+  --color-medium: #d48e46; /* Warm muted sand-gold */
+  --color-low: #5a8e7a; /* Muted earthy sage green */
+}
+
+/* Reset and Custom Base Styles */
+@layer base {
+  body {
+    background-color: #141413;
+    color: #f3ede2; /* Warm ivory/cream text */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  h1, h2, h3, .serif-heading {
+    font-family: 'Lora', Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141413;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292927;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3b38;
+}
+
+/* Custom styles for professional tables & code blocks */
+.code-preview {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}

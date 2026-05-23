@@ -1,0 +1,50 @@
+# Virtual environments
+backend/.venv/
+.venv/
+venv/
+ENV/
+
+# Databases
+backend/codelens.db
+*.db
+*.sqlite
+
+# Environment variables (Crucial for security!)
+backend/.env
+.env
+.env.local
+.env.*.local
+
+# Node dependencies
+frontend/node_modules/
+node_modules/
+
+# Frontend builds
+frontend/dist/
+dist/
+dist-ssr/
+*.local
+
+# Python cache & build files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs & System files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.gemini/
+antigravity-ide/
