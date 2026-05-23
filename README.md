@@ -1,4 +1,4 @@
-# 👁️ CodeLens — AI-Powered Code Review & Auditing Engine
+# CodeLens — AI-Powered Code Review & Auditing Engine
 
 CodeLens is a premium, full-stack code auditing and review intelligence platform. It scans public GitHub repositories, analyzes the codebase using state-of-the-art Large Language Models (LLMs), detects critical bugs, security gaps, performance bottlenecks, and best practice violations, and provides side-by-side actionable code recommendations. Users can view these reviews interactively on a sleek web dashboard or export them as a professional, corporate-grade PDF report.
 
@@ -6,7 +6,7 @@ The interface is custom-designed with a sophisticated, earthy charcoal and terra
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **Recursive Repository Analysis**: Crawls public GitHub repositories recursively to build file maps and screen candidates.
 * **Concurrent Review Pipelines**: Concurrently reviews files using a throttled asynchronous queue (`asyncio.Semaphore(3)`), protecting against free-tier rate limits while maintaining speeds of under 10 seconds.
@@ -23,9 +23,9 @@ The interface is custom-designed with a sophisticated, earthy charcoal and terra
 
 ---
 
-## 🛠️ Complete Technology Stack
+## Complete Technology Stack
 
-### 🐍 Backend (FastAPI API)
+### Backend (FastAPI API)
 * **FastAPI (v0.100.0+)**: Highly performant, asynchronous web framework for building APIs.
 * **Uvicorn (v0.20.0+)**: Standard lightning-fast ASGI web server implementation.
 * **Pydantic & Pydantic-Settings (v2.0.0+)**: Data validation, typing, and environment-level configuration management.
@@ -37,7 +37,7 @@ The interface is custom-designed with a sophisticated, earthy charcoal and terra
 * **ReportLab (v4.0.0+)**: Enterprise-level PDF creation engine to generate beautifully formatted reports.
 * **Python-Dotenv**: Loads local `.env` configuration keys into runtime environments.
 
-### ⚛️ Frontend (React & Vite SPA)
+### Frontend (React & Vite SPA)
 * **React 19 (v19.2.6)**: Component-driven visual client state management.
 * **Vite 8 (v8.0.12)**: Next-generation ultra-fast bundler and dev server.
 * **Tailwind CSS v4 (v4.3.0)**: Modern utility-first CSS framework with integrated compiler.
@@ -46,7 +46,7 @@ The interface is custom-designed with a sophisticated, earthy charcoal and terra
 
 ---
 
-## 📂 Detailed File Directory Tree Structure
+## Detailed File Directory Tree Structure
 
 ```bash
 CodeLens/
@@ -94,7 +94,7 @@ CodeLens/
 
 ---
 
-## 🔌 API Specifications
+## API Specifications
 
 ### 1. `POST /api/review`
 Triggers the full repository scan, concurrent file download, and Groq LLM reviews.
@@ -140,7 +140,7 @@ Generates and streams a custom, corporate-grade PDF file named `CodeLens_Review_
 
 ---
 
-## 🛢️ Database Schema Model
+## Database Schema Model
 
 ### Table: `reviews`
 Mapped using SQLAlchemy's async engine:
@@ -155,45 +155,10 @@ Mapped using SQLAlchemy's async engine:
 | `review_data` | `JSON` | Nullable=False | Full structured LLM findings |
 | `created_at` | `DateTime` | Default=UTC | Timestamp when the audit was generated |
 
----
-
-## 🔑 Guide: How to Get Free API Keys
-
-CodeLens uses free-tier limits. Set up your credentials in less than 3 minutes:
-
-### 1. Groq LLM API Key (Required)
-Groq provides high-speed inference for open models (like Meta's `llama-3.3-70b-versatile`) with a generous free tier.
-1. Visit the **[Groq Console](https://console.groq.com/)**.
-2. Sign up with a free account (using Google, GitHub, or Email).
-3. On the left sidebar, click **API Keys**.
-4. Click **Create API Key**, name it `CodeLens`, and copy the resulting string starting with `gsk_...`.
-5. Paste this key in your `backend/.env` file under `GROQ_API_KEY`.
-
-### 2. GitHub Personal Access Token (Optional)
-The public GitHub API limits unauthenticated requests to **60 per hour**. Adding a free personal token increases this to **5,000 per hour**, preventing rate-limiting when auditing larger repositories.
-1. Sign in to your **[GitHub Account](https://github.com/)**.
-2. Go to **Settings** → **Developer Settings** → **Personal Access Tokens** → **Tokens (classic)** (or go directly to [github.com/settings/tokens](https://github.com/settings/tokens)).
-3. Click **Generate new token (classic)**.
-4. Set the note as `CodeLens-Review`.
-5. Under scopes, **do not select any scopes**. Leaving all scopes unchecked creates a "fine-grained read-only" token, which is the safest security practice and fully sufficient for fetching public tree configurations.
-6. Click **Generate token** and copy the code starting with `ghp_...`.
-7. Paste this in your `backend/.env` file under `GITHUB_TOKEN`.
 
 ---
 
-## 🎨 visual Design System & Styling (Claude-Inspired)
-
-Designed with custom-curated Tailwind v4 tokens, creating a premium, distraction-free aesthetic:
-* **Backgrounds**: Deep, warm earthy charcoal `#141413` (canvas) and `#1c1c1b` (card bodies) instead of standard cold blues or flat blacks.
-* **Borders**: Soft clay-accented dark grey `#292927`.
-* **Primary Accent**: Claude's signature warm terracotta `#d97736` (instead of flashy neon colors), with a lighter clay hover `#e5935c`.
-* **Muted Typography**: Soft warm ivory `#f3ede2` for text and elegant clay highlights.
-* **Serif Headings**: Google Font **Lora** configured for all headers (`h1`, `h2`, `h3`) for a highly polished, editorial publication look.
-* **Body Font**: **Inter** sans-serif font for maximum clean readability of dashboard items, code lines, and summaries.
-
----
-
-## 🛠️ Quick Start Instructions
+## Quick Start Instructions
 
 This project is organized as a monorepo containing `/backend` (FastAPI) and `/frontend` (React + Vite).
 
